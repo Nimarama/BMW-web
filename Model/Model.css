@@ -1,0 +1,259 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   text-decoration: none;
+   list-style: none;
+   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial,
+      sans-serif;
+}
+
+:root {
+   --color-primary: #1743e3;
+   --color-white: #eaeaea;
+   --color-dark: #333;
+   --color-black: #222;
+}
+
+.container {
+   max-width: 1620px;
+   width: 90%;
+   margin: 0 auto;
+}
+
+.con {
+   margin-top: 200px;
+   margin-left: 200px;
+   margin-right: 200px;
+}
+
+/* .......................Start Nav Bar...................... */
+
+nav {
+   width: 100%;
+   height: 5rem;
+   position: fixed;
+   left: 0;
+   top: 0;
+   z-index: 100;
+   display: grid;
+   place-items: center;
+}
+
+.nav-container {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.nav-container ul {
+   display: flex;
+   align-items: center;
+   gap: 30px;
+}
+
+.logo h3 {
+   font-size: 25px;
+   color: var(--color-black);
+   opacity: 0;
+   animation: logoAni 1s ease forwards;
+}
+
+.nav-link li a {
+   color: var(--color-black);
+   font-size: 17px;
+   transition: 0.4s ease;
+   display: inline-block;
+   animation: NavliaAni forwards 1s ease;
+   animation-delay: calc(0.2s * var(--i));
+   opacity: 0;
+}
+
+.nav-link li a:hover {
+   color: var(--color-primary);
+}
+
+.nav-link li .active {
+   color: var(--color-primary);
+}
+
+.social-link li a {
+   height: 40px;
+   width: 40px;
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   border: 2px solid transparent;
+   transform: rotate(45deg);
+   transition: 0.4s ease;
+   animation: socialAni forwards 1s ease;
+   animation-delay: calc(0.2s * var(--i));
+   opacity: 0;
+}
+
+.social-link li a:hover {
+   border-color: var(--color-white);
+}
+
+.social-link li a i {
+   transform: rotate(-45deg);
+   font-size: 20px;
+   color: var(--color-white);
+}
+
+.sq-box2 {
+   position: absolute;
+   width: 700px;
+   height: 700px;
+   background: var(--color-primary);
+   transform: rotate(45deg);
+   top: -26%;
+   right: -26%;
+   z-index: -1;
+   opacity: 0;
+   animation: sqbox2Ani forwards 1s ease;
+   animation-delay: 0.3s;
+}
+
+/* .......................End Nav Bar...................... */
+
+.listProduct .item img {
+   width: 90%;
+   filter: drop-shadow(0 50px 20px #0009);
+   opacity: 0;
+   animation: carAni forwards 1s ease;
+   animation-delay: 1.6s;
+}
+
+.listProduct {
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   gap: 20px;
+   opacity: 0;
+   animation: logoAni 2.5s ease forwards;
+}
+
+.listProduct .item {
+   background-color: var(--color-white);
+   padding: 20px;
+   border-top: 2px solid var(--color-primary);
+   border-right: 2px solid var(--color-primary);
+   box-shadow: 5px 5px var(--color-dark);
+   border-radius: 20px;
+}
+
+.listProduct .item h2 {
+   font-weight: 500;
+   font-size: large;
+   color: var(--color-black);
+}
+
+.listProduct .item .price {
+   letter-spacing: 3px;
+   font-size: small;
+}
+
+.listProduct .item button {
+   background-color: var(--color-black);
+   color: var(--color-white);
+   border: none;
+   padding: 5px 10px;
+   margin-top: 10px;
+   border-radius: 20px;
+   cursor: pointer;
+}
+
+.listProduct .item button:hover {
+   color: var(--color-primary);
+}
+
+/* .......................Animation Start...................... */
+
+@keyframes logoAni {
+   0% {
+      transform: translateX(-100px);
+      opacity: 0;
+   }
+   100% {
+      transform: translateX(0);
+      opacity: 1;
+   }
+}
+
+@keyframes NavliaAni {
+   0% {
+      transform: translateY(100px);
+      opacity: 0;
+   }
+   100% {
+      transform: translateY(0);
+      opacity: 1;
+   }
+}
+
+@keyframes socialAni {
+   0% {
+      transform: translateX(100px) rotate(45deg);
+      opacity: 0;
+   }
+   100% {
+      transform: translateX(0) rotate(45deg);
+      opacity: 1;
+   }
+}
+
+@keyframes H1Ani {
+   0% {
+      transform: translateY(-100px);
+      opacity: 0;
+   }
+   100% {
+      transform: translateY(0);
+      opacity: 1;
+   }
+}
+
+@keyframes zoomOut {
+   0% {
+      transform: scale(1.1);
+      opacity: 0;
+   }
+   100% {
+      transform: scale(1);
+      opacity: 1;
+   }
+}
+
+@keyframes carAni {
+   0% {
+      transform: translate(180px, -300px) scale(0) rotate(-45deg);
+      opacity: 0;
+   }
+   100% {
+      transform: translate(0, 0) scale(1) rotate(0);
+      opacity: 1;
+   }
+}
+
+@keyframes sqbox2Ani {
+   0% {
+      right: -40%;
+      opacity: 0;
+   }
+   100% {
+      right: -26%;
+      opacity: 1;
+   }
+}
+
+@keyframes spam1 {
+   0% {
+      -webkit-text-stroke: 1.2px var(--color-black);
+      color: transparent;
+   }
+   100% {
+      color: var(--color-black);
+   }
+}
+
+/* .......................End Animation...................... */
